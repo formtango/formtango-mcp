@@ -20,7 +20,7 @@ async function call(path, { method = 'GET', body, auth = true } = {}) {
   try {
     response = await fetch(`${BASE}/api/v1${path}`, {
       method,
-      headers: { 'User-Agent': 'formtango-mcp/0.1', ...(auth ? { Authorization: `Bearer ${KEY}` } : {}), ...(body ? { 'Content-Type': 'application/json' } : {}) },
+      headers: { 'User-Agent': 'formtango-mcp/0.1.1', ...(auth ? { Authorization: `Bearer ${KEY}` } : {}), ...(body ? { 'Content-Type': 'application/json' } : {}) },
       body: body ? JSON.stringify(body) : undefined,
       signal: AbortSignal.timeout(20_000),
     });
@@ -35,7 +35,7 @@ async function call(path, { method = 'GET', body, auth = true } = {}) {
 const reply = (result) =>
   result.error ? { isError: true, content: [{ type: 'text', text: result.error }] } : { content: [{ type: 'text', text: JSON.stringify(result.data, null, 2) }] };
 
-const server = new McpServer({ name: 'formtango', title: 'FormTango', version: '0.1.0' });
+const server = new McpServer({ name: 'formtango', title: 'FormTango', version: '0.1.1' });
 
 server.registerTool(
   'create_form_without_account',
