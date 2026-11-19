@@ -1,0 +1,15 @@
+{
+  "name": "formtango-mcp",
+  "version": "0.1.0",
+  "description": "MCP server for FormTango: let an AI assistant add a working form to a website, with no signup, and read submissions.",
+  "license": "MIT",
+  "type": "module",
+  "bin": { "formtango-mcp": "index.js" },
+  "files": ["index.js", "README.md", "LICENSE"],
+  "engines": { "node": ">=18" },
+  "keywords": ["mcp", "mcp-server", "model-context-protocol", "forms", "form-backend", "contact-form", "formtango", "ai-agents"],
+  "homepage": "https://formtango.com/ai",
+  "repository": { "type": "git", "url": "git+https://github.com/formtango/formtango-mcp.git" },
+  "bugs": { "url": "https://github.com/formtango/formtango-mcp/issues" },
+  "dependencies": { "@modelcontextprotocol/sdk": "^1.32.0", "zod": "^3.25.0" }
+}
